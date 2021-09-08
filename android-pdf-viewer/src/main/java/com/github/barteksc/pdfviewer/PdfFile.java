@@ -91,6 +91,8 @@ class PdfFile {
         this.autoSpacing = autoSpacing;
         this.fitEachPage = fitEachPage;
         this.isLandscape = isLandscape;
+
+        if(this.showTwoPages) this.autoSpacing = false;
         setup(viewSize);
     }
 
