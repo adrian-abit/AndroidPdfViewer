@@ -16,6 +16,7 @@
 package com.github.barteksc.pdfviewer;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.github.barteksc.pdfviewer.source.DocumentSource;
 import com.shockwave.pdfium.PdfDocument;
@@ -51,7 +52,7 @@ class DecodingAsyncTask extends AsyncTask<Void, Void, Throwable> {
             PDFView pdfView = pdfViewReference.get();
             if (pdfView != null) {
                 PdfDocument pdfDocument = docSource.createDocument(pdfView.getContext(), pdfiumCore, password);
-                System.out.println("It is on DualPageMode? " + pdfView.isOnDualPageMode());
+                Log.d("PdfView", "It is on DualPageMode? " + pdfView.isOnDualPageMode());
                 pdfFile = new PdfFile(
                         pdfiumCore,
                         pdfDocument,

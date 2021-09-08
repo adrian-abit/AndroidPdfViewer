@@ -1254,7 +1254,7 @@ public class PDFView extends RelativeLayout {
 
     public void setDualPageMode(boolean dualPageMode) {
         this.dualPageMode = dualPageMode;
-        System.out.println("setDualPage setting it to " + dualPageMode + " " + this.dualPageMode);
+        Log.d("PdfView","setDualPage setting it to " + dualPageMode + " " + this.dualPageMode);
     }
 
     public boolean isSwipeVertical() {
@@ -1415,7 +1415,7 @@ public class PDFView extends RelativeLayout {
 
     private enum State {DEFAULT, LOADED, SHOWN, ERROR}
 
-    public class Configurator {
+    public class Configuator {
 
         private final DocumentSource documentSource;
 
