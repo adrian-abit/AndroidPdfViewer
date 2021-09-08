@@ -18,6 +18,7 @@ package com.github.barteksc.pdfviewer;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.util.Log;
 import android.util.SparseBooleanArray;
 
 import com.github.barteksc.pdfviewer.exception.PageRenderingException;
@@ -93,6 +94,7 @@ class PdfFile {
         this.isLandscape = isLandscape;
 
         System.out.println("ShowTwoPages is" + this.showTwoPages);
+        Log.d("PdfView", "ShowTwoPages is" + this.showTwoPages);
         if(this.showTwoPages) this.autoSpacing = false;
         setup(viewSize);
     }
