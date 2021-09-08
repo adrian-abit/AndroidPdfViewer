@@ -1254,6 +1254,7 @@ public class PDFView extends RelativeLayout {
 
     public void setDualPageMode(boolean dualPageMode) {
         this.dualPageMode = dualPageMode;
+        System.out.println("setDualPage setting it to " + dualPageMode + " " + this.dualPageMode);
     }
 
     public boolean isSwipeVertical() {

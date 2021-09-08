@@ -51,6 +51,7 @@ class DecodingAsyncTask extends AsyncTask<Void, Void, Throwable> {
             PDFView pdfView = pdfViewReference.get();
             if (pdfView != null) {
                 PdfDocument pdfDocument = docSource.createDocument(pdfView.getContext(), pdfiumCore, password);
+                System.out.printf("It is on DualPageMode? " + pdfView.isOnDualPageMode());
                 pdfFile = new PdfFile(
                         pdfiumCore,
                         pdfDocument,
