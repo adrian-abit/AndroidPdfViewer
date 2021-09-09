@@ -1415,7 +1415,7 @@ public class PDFView extends RelativeLayout {
 
     private enum State {DEFAULT, LOADED, SHOWN, ERROR}
 
-    public class Configuator {
+    public class Configurator {
 
         private final DocumentSource documentSource;
 
