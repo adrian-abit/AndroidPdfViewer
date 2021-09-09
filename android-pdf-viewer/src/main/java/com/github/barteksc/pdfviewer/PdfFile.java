@@ -94,8 +94,8 @@ class PdfFile {
         this.isLandscape = isLandscape;
 
         System.out.println("ShowTwoPages is" + this.showTwoPages);
-        Log.d("PdfView", "ShowTwoPages is" + this.showTwoPages);
-        //if(this.showTwoPages) this.autoSpacing = false;
+        Log.d("PdfView", "ShowTwoPages is rrr" + this.showTwoPages);
+        if(this.showTwoPages) this.autoSpacing = false;
         setup(viewSize);
     }
 
