@@ -98,11 +98,6 @@ class PdfFile {
         if(this.showTwoPages) {
             this.fitEachPage = false;
         }
-
-        if(autoSpacing){
-            this.autoSpacing = false;
-            this.fitEachPage = true;
-        }
         Log.d("PdfView", "autoSpacing and fiteachpage is rrr" + this.autoSpacing + " " + this.fitEachPage);
         Log.d("PdfView", "Landscape is rrr" + this.isLandscape);
         setup(viewSize);
