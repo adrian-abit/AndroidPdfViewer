@@ -73,7 +73,7 @@ class PdfFile {
      */
     private final boolean fitEachPage;
 
-    private final boolean isLandscape;
+    private boolean isLandscape;
     /**
      * The pages the user want to display in order
      * (ex: 0, 2, 2, 8, 8, 1, 1, 1)
@@ -95,7 +95,7 @@ class PdfFile {
 
         System.out.println("ShowTwoPages is" + this.showTwoPages);
         Log.d("PdfView", "ShowTwoPages is rrr" + this.showTwoPages);
-        if(this.showTwoPages) this.autoSpacing = false;
+        if(this.showTwoPages) this.isLandscape = true;
         setup(viewSize);
     }
 
