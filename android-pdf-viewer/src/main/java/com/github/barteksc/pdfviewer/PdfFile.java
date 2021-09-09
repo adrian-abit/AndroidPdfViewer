@@ -96,7 +96,6 @@ class PdfFile {
         System.out.println("ShowTwoPages is" + this.showTwoPages);
         Log.d("PdfView", "ShowTwoPages is rrr" + this.showTwoPages);
         if(this.showTwoPages) {
-            this.isLandscape = true;
             this.fitEachPage = false;
         }
 
@@ -188,14 +187,32 @@ class PdfFile {
 
     private void prepareAutoSpacing(Size viewSize) {
         pageSpacing.clear();
-        for (int i = 0; i < getPagesCount(); i++) {
-            SizeF pageSize = pageSizes.get(i);
-            float spacing = Math.max(0, isVertical ? viewSize.getHeight() - pageSize.getHeight() :
-                    viewSize.getWidth() - pageSize.getWidth());
-            if (i < getPagesCount() - 1) {
-                spacing += spacingPx;
+        if(showTwoPages){
+            for (int i = 0; i < getPagesCount(); i=i+2) {
+                SizeF pageSize = pageSizes.get(i);
+                float spacing;
+                if(i == 0) {
+                    spacing = Math.max(0, isVertical ? viewSize.getHeight() - pageSize.getHeight() :
+                            viewSize.getWidth() - pageSize.getWidth());
+                } else {
+                    spacing = Math.max(0, isVertical ? viewSize.getHeight() - pageSize.getHeight() :
+                            viewSize.getWidth() - pageSize.getWidth() / 2 );
+                }
+                if (i < getPagesCount() - 1) {
+                    spacing += spacingPx;
+                }
+                pageSpacing.add(spacing);
             }
-            pageSpacing.add(spacing);
+        } else {
+            for (int i = 0; i < getPagesCount(); i++) {
+                SizeF pageSize = pageSizes.get(i);
+                float spacing = Math.max(0, isVertical ? viewSize.getHeight() - pageSize.getHeight() :
+                        viewSize.getWidth() - pageSize.getWidth());
+                if (i < getPagesCount() - 1) {
+                    spacing += spacingPx;
+                }
+                pageSpacing.add(spacing);
+            }
         }
     }
 
