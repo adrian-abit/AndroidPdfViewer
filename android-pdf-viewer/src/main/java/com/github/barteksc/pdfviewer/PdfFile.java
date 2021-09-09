@@ -95,9 +95,6 @@ class PdfFile {
 
         System.out.println("ShowTwoPages is" + this.showTwoPages);
         Log.d("PdfView", "ShowTwoPages is rrr" + this.showTwoPages);
-        if(this.showTwoPages) {
-            this.fitEachPage = false;
-        }
         Log.d("PdfView", "autoSpacing and fiteachpage is rrr" + this.autoSpacing + " " + this.fitEachPage);
         Log.d("PdfView", "Landscape is rrr" + this.isLandscape);
         setup(viewSize);
@@ -183,7 +180,7 @@ class PdfFile {
     private void prepareAutoSpacing(Size viewSize) {
         pageSpacing.clear();
         if(showTwoPages){
-            for (int i = 0; i < getPagesCount(); i=i+2) {
+            for (int i = 0; i < getPagesCount(); i++) {
                 SizeF pageSize = pageSizes.get(i);
                 float spacing;
                 if(i == 0) {
