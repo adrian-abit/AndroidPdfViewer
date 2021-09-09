@@ -95,7 +95,7 @@ class PdfFile {
 
         System.out.println("ShowTwoPages is" + this.showTwoPages);
         Log.d("PdfView", "ShowTwoPages is" + this.showTwoPages);
-        if(this.showTwoPages) this.autoSpacing = false;
+        //if(this.showTwoPages) this.autoSpacing = false;
         setup(viewSize);
     }
 
