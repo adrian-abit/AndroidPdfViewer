@@ -71,7 +71,7 @@ class PdfFile {
      * True if every page should fit separately according to the FitPolicy,
      * else the largest page fits and other pages scale relatively
      */
-    private final boolean fitEachPage;
+    private boolean fitEachPage;
 
     private boolean isLandscape;
     /**
@@ -95,7 +95,11 @@ class PdfFile {
 
         System.out.println("ShowTwoPages is" + this.showTwoPages);
         Log.d("PdfView", "ShowTwoPages is rrr" + this.showTwoPages);
-        if(this.showTwoPages) this.isLandscape = true;
+        if(this.showTwoPages) {
+            this.isLandscape = true;
+            this.fitEachPage = false;
+        }
+        Log.d("PdfView", "Landscape is rrr" + this.isLandscape);
         setup(viewSize);
     }
 
