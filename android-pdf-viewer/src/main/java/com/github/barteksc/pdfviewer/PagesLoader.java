@@ -232,6 +232,7 @@ class PagesLoader {
         float lastXOffset = -xOffset - pdfView.getWidth() - scaledPreloadOffset;
         float firstYOffset = -yOffset + scaledPreloadOffset;
         float lastYOffset = -yOffset - pdfView.getHeight() - scaledPreloadOffset;
+        Log.d("MyMind", "spo: " + scaledPreloadOffset + " fxo: " + firstXOffset + " lxo: " + lastXOffset + " fyo: " + firstYOffset + " lyo: " + lastYOffset);
 
         List<RenderRange> rangeList = getRenderRangeList(firstXOffset, firstYOffset, lastXOffset, lastYOffset);
 
