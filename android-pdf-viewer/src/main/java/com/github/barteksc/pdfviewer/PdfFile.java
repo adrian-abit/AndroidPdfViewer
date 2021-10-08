@@ -18,6 +18,7 @@ package com.github.barteksc.pdfviewer;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.util.Log;
 import android.util.SparseBooleanArray;
 
 import com.github.barteksc.pdfviewer.exception.PageRenderingException;
@@ -88,7 +89,7 @@ class PdfFile {
         this.originalUserPages = originalUserPages;
         this.isVertical = isVertical;
         this.spacingPx = spacing;
-        this.autoSpacing = autoSpacing;
+        this.autoSpacing = false;
         this.fitEachPage = fitEachPage;
         this.isLandscape = isLandscape;
         setup(viewSize);
@@ -127,6 +128,7 @@ class PdfFile {
         maxWidthPageSize = calculator.getOptimalMaxWidthPageSize();
         maxHeightPageSize = calculator.getOptimalMaxHeightPageSize();
 
+        Log.d("MyMind", "It is now " + showTwoPages + " and the landscape is " + isLandscape);
         for (Size size : originalPageSizes) {
             pageSizes.add(calculator.calculate(size, showTwoPages, isLandscape));
         }

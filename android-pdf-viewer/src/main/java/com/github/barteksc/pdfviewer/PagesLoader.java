@@ -236,6 +236,7 @@ class PagesLoader {
 
         for (RenderRange range : rangeList) {
             loadThumbnail(range.page);
+            loadThumbnail(range.page);
         }
 
         for (RenderRange range : rangeList) {
