@@ -236,6 +236,11 @@ class PagesLoader {
 
         List<RenderRange> rangeList = getRenderRangeList(firstXOffset, firstYOffset, lastXOffset, lastYOffset);
 
+        if(rangeList.size() > 2) {
+            Log.d("MyMind", "removing too much " + rangeList.size());
+            rangeList.subList(2, rangeList.size()).clear();
+        }
+
         for (RenderRange range : rangeList) {
             Log.d("MyMind", "Rendering: " + range.page + " and " + range.gridSize);
             loadThumbnail(range.page);
