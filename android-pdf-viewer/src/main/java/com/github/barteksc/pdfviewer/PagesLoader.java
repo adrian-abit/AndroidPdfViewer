@@ -16,6 +16,7 @@
 package com.github.barteksc.pdfviewer;
 
 import android.graphics.RectF;
+import android.util.Log;
 
 import com.github.barteksc.pdfviewer.util.Constants;
 import com.github.barteksc.pdfviewer.util.MathUtils;
@@ -235,11 +236,13 @@ class PagesLoader {
         List<RenderRange> rangeList = getRenderRangeList(firstXOffset, firstYOffset, lastXOffset, lastYOffset);
 
         for (RenderRange range : rangeList) {
+            Log.d("MyMind", "Rendering: " + range.page + " and " + range.gridSize);
             loadThumbnail(range.page);
             loadThumbnail(range.page);
         }
 
         for (RenderRange range : rangeList) {
+            Log.d("MyMind", "Rendering2: " + range.page + " and " + range.gridSize + " and " + range.rightBottom.row + " and " + range.leftTop.col);
             calculatePartSize(range.gridSize);
             parts += loadPage(range.page, range.leftTop.row, range.rightBottom.row, range.leftTop.col, range.rightBottom.col, CACHE_SIZE - parts);
             if (parts >= CACHE_SIZE) {

@@ -51,7 +51,7 @@ public class PageSizeCalculator {
         if(showTwoPages && !isLandscape){
            maxWidth = fitEachPage ? viewSize.getWidth()  : pageSize.getWidth() / 2 * widthRatio;
         } else {
-            maxWidth = fitEachPage ? viewSize.getWidth() : pageSize.getWidth() * widthRatio;
+            maxWidth = fitEachPage ? viewSize.getWidth() : pageSize.getWidth()  * widthRatio;
         }
         float maxHeight = fitEachPage ? viewSize.getHeight() : pageSize.getHeight() * heightRatio;
         switch (fitPolicy) {
