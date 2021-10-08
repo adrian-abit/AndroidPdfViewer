@@ -87,11 +87,11 @@ class PdfFile {
         this.pdfDocument = pdfDocument;
         this.pageFitPolicy = pageFitPolicy;
         this.originalUserPages = originalUserPages;
-        this.isVertical = isVertical;
+        this.isVertical = !showTwoPages;
         this.spacingPx = spacing;
         this.autoSpacing = false;
         this.fitEachPage = fitEachPage;
-        this.isLandscape = isLandscape;
+        this.isLandscape = showTwoPages;
         setup(viewSize);
     }
 
@@ -128,9 +128,9 @@ class PdfFile {
         maxWidthPageSize = calculator.getOptimalMaxWidthPageSize();
         maxHeightPageSize = calculator.getOptimalMaxHeightPageSize();
 
-        Log.d("MyMind", "It is now " + showTwoPages + " and the landscape is " + isLandscape);
+        Log.d("MyMind", "It is now " + showTwoPages + " and the landscape is " + isLandscape + " and vertical is" + isVertical);
         for (Size size : originalPageSizes) {
-            pageSizes.add(calculator.calculate(size, showTwoPages, showTwoPages));
+            pageSizes.add(calculator.calculate(size, showTwoPages, isLandscape));
         }
         if (autoSpacing) {
             prepareAutoSpacing(viewSize);
