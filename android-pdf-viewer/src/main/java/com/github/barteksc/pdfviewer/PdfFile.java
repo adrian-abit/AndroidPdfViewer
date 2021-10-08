@@ -130,7 +130,7 @@ class PdfFile {
 
         Log.d("MyMind", "It is now " + showTwoPages + " and the landscape is " + isLandscape);
         for (Size size : originalPageSizes) {
-            pageSizes.add(calculator.calculate(size, showTwoPages, isLandscape));
+            pageSizes.add(calculator.calculate(size, showTwoPages, showTwoPages));
         }
         if (autoSpacing) {
             prepareAutoSpacing(viewSize);
